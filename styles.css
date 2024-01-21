@@ -1,0 +1,252 @@
+html {
+    scroll-behavior: smooth;
+    letter-spacing: 1px;
+}
+
+/* ページ全体のスタイル */
+body {
+    font-family: 'minecraft', 'minecraft_jp' , sans-serif;
+    margin: 0;
+    background: url('image/dirt.png') repeat;
+    overflow-x: hidden;
+}
+
+/* リンクジャンプ先余白設定 */
+h2.anchor{
+    display: block;
+    padding-top: 25px;
+}
+
+/* メインコンテンツ */
+main {
+    margin: 20px auto;
+    padding: 20px;
+    width: 850px;
+    position: relative;
+    color: #ffffff;
+    text-shadow: 3px 3px #000A;
+    box-shadow: 0 0 10px #000000; /* 枠線の設定 */
+}
+
+/* オーバーレイ用の擬似要素（背景にぼかしと明度の調整をかける） */
+main::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('image/stone2.png') repeat;
+    filter: blur(0.5px) brightness(0.8);
+    z-index: -1;
+}
+
+h3{
+    font-size: 50px;
+    margin: 5px;
+}
+
+h4{
+    font-size: 20px;
+    margin: 0px;
+}
+
+.logo_box{
+    width: 100%;
+    height: 500px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.logo_img {
+    width: 300px;
+    height: auto;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 150px; /* 丸める半径をピクセルで指定 */
+}
+
+/* divの設定 */
+div {
+    text-align: center;
+}
+
+/* コンテナの設定 */
+.container {
+    display: flex; /* Flexboxを有効にする */
+    justify-content: center; /* 縦方向に中央揃え */
+    align-items: center; /* 横方向に中央揃え */
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+  /* ボックスの設定 */
+.box {
+    width: 75px; /* ボックスの幅 */
+    height: 75px; /* ボックスの高さ */
+    margin: auto; /* ボックス間の余白 */
+    overflow: visible; /* 画像がボックスからはみ出さないようにするための設定 */
+    position: relative; /* 相対位置指定 */
+    transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+}
+
+/* 画像の設定 */
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 画像をボックス内に収める */
+    box-shadow: 0 0 10px #000000; /* 影の設定 */
+    border-radius: 2px; /* 丸める半径をピクセルで指定 */
+  }
+
+/* ホバーエフェクトの設定 */
+.box:hover {
+    transform: scale(1.1); /* 拡大するアニメーション */
+}
+
+/* リンク説明の設定 */
+.description {
+    position: absolute;
+    top: -40%; /* 説明をボックスの上部に移動 */
+    left: 0%;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 22px;
+    color: #ffffff;
+    text-shadow: 3px 3px #000A;
+}
+
+/* リンクの設定 */
+a {
+    color: #000000; /* リンクのデフォルトの色 */
+    text-decoration: none; /* 下線をなくす */
+}
+
+/* Discordサーバーリンクのホバーエフェクト */
+a.discord:hover {
+    text-shadow: 0 0 2px #003cff; /* 文字の浮き上がりを設定 */
+}
+
+/* ボタンのスタイル */
+button {
+    font-family: 'minecraft', 'minecraft_jp' , sans-serif;
+    padding: 10px 10px;
+    font-size: 15px;
+    background-color: #98cdff;
+    color: #000000;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    letter-spacing: 1px; /* 文字間隔 */
+}
+
+/* ボタンのホバーエフェクト */
+button:hover {
+    background-color: #5ca2ff;
+}
+
+/* セクション内の画像と文章のスタイル調整 */
+section {
+    position: relative; /* 相対位置指定 */
+    margin-bottom: 300px;
+    font-size: 18px;
+}
+
+section img {
+    max-width: 50%; /* 最大幅を親要素に合わせる */
+    height: auto; /* 高さを自動調整 */
+    float: left; /* 画像を左にフロートさせる（文章が画像の右に配置される） */
+    margin-right: 20px; /* 画像と文章の間隔 */
+}
+
+/* 改行のために必要な<p>の設定 */
+section p {
+    clear: left; /* 左にフロートしている要素の下に配置する（画像の下に文章を配置） */
+}
+
+/* セクションタイトル */
+h2 {
+    letter-spacing: 1px; /* 文字間隔 */
+}
+
+.mc-menu {
+    --btn-size: 20pt;
+}
+
+.mc-button {
+    height: var(--btn-size);
+    width: calc(var(--btn-size) * 5);
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    user-select: none;
+    background: #999 url("image/mc-button.png") center/cover;
+    image-rendering: pixelated;
+    border: 2px solid #000;
+}
+
+.mc-button:hover .title {
+    background-color: rgba(100, 100, 255, 0.45);
+    text-shadow: 2px 2px #202013CC;
+    color: #FFFFA0;
+}
+
+.mc-button:active .title {
+    box-shadow: inset -2px -4px #0004, inset 2px 2px #FFF5;
+}
+
+.mc-button .title {
+    width: 100%;
+    height: 100%;
+    padding-bottom: .3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-shadow: 2px 2px #000A;
+    box-shadow: inset -2px -7px #0006, inset 2px 2px #FFF7;
+}
+
+/* フッタースタイル */
+footer {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    bottom: 0; /* ページの下端に配置 */
+    width: 100%; /* ページ幅に合わせる */
+    height:90px;
+    line-height:90px;
+    letter-spacing: 1px; /* 文字間隔 */
+}
+
+
+/* otfフォントの読み込み */
+@font-face {
+    font-family: 'minecraft';
+    src: url('font/minecraft_font.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'minecraft_jp';
+    src: url('font/minecraft_font_jp.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+  /* スクロールバーのデザイン */
+  ::-webkit-scrollbar{
+    width: 5px;
+ }
+ ::-webkit-scrollbar-track{
+    background-color: #ccc;
+ }
+ ::-webkit-scrollbar-thumb{
+    background-color: #515c69;
+ }
+
